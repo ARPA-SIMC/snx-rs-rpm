@@ -5,7 +5,6 @@ Version:        2.4.2
 Release:        1
 Summary:        Rust client for Checkpoint VPN tunnels
 
-SourceLicense:  AGPL-3.0
 License:        AGPL-3.0
 
 URL:            https://github.com/ancwrd1/snx-rs
