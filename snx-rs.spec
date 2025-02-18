@@ -8,8 +8,14 @@ Summary:        Rust client for Checkpoint VPN tunnels
 License:        AGPL-3.0
 
 URL:            https://github.com/ancwrd1/snx-rs
-Source:         https://github.com/ancwrd1/snx-rs/releases/download/v2.4.2/snx-rs-v%{version}-linux-x86_64.tar.xz
+Source:         https://github.com/ancwrd1/snx-rs/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
+BuildRequires:  cargo
+%if 0%{?fedora}
+BuildRequires:  rust-rpm-macros
+%else
+BuildRequires:  rust-toolset
+%endif
 
 %global _description %{expand:
 Rust client for Checkpoint VPN tunnels.}
@@ -17,12 +23,13 @@ Rust client for Checkpoint VPN tunnels.}
 %description %{_description}
 
 %prep
-%autosetup -n snx-rs-v%{version}-linux-x86_64
+%autosetup -n %{name}-%{version}
 
 %build
+%cargo_build
 
 %install
-install -D -m 0751 snx-rs %{buildroot}%{_bindir}/snx-rs
+%cargo_install
 
 %files
 %{_bindir}/snx-rs
