@@ -1,14 +1,14 @@
 %global debug_package %{nil}
 
 Name:           snx-rs
-Version:        2.4.2
-Release:        2
+Version:        6.1.1
+Release:        1
 Summary:        Rust client for Checkpoint VPN tunnels
 
 License:        AGPL-3.0
 
 URL:            https://github.com/ancwrd1/snx-rs
-Source:         https://github.com/ancwrd1/snx-rs/releases/download/v2.4.2/snx-rs-v%{version}-linux-x86_64.tar.xz
+Source:         https://github.com/ancwrd1/snx-rs/releases/download/v%{version}/snx-rs-v%{version}-linux-x86_64.tar.xz
 
 
 %global _description %{expand:
@@ -28,6 +28,9 @@ install -D -m 0751 snx-rs %{buildroot}%{_bindir}/snx-rs
 %{_bindir}/snx-rs
 
 %changelog
+* Tue Jun 16 2026 Daniele Branchini  <dbranchini@arpae.it> - 6.1.1-1
+- Upstream update
+
 * Fri Oct 18 2024 Daniele Branchini <dbranchini@arpae.it> - 2.4.2-2
 - Adapted specfile for epel8
 
